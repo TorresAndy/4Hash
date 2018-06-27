@@ -1,0 +1,6 @@
+Usage perceptual hashes for video identification
+The scripts uses the following hash algorithms
+aHash
+dHash
+pHash
+WHash
