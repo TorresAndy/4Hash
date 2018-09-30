@@ -1,8 +1,9 @@
 #!/usr/bin/python
+
 from PIL import Image
 import imagehash
 
- class hashImage:
+class hashImage:
    def __init__(self):
       pass
 
