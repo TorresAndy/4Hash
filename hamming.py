@@ -1,8 +1,12 @@
 #!/usr/bin/python
 class hamming:
+
+
     def __init__(self, a, b):
        self.a = a
        self.b = b
+
+
     def distance(self):
        lengthofa = len(self.a)
        lengthofb = len(self.b)
