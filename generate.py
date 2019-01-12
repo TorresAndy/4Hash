@@ -6,12 +6,16 @@
 
 from frames import extraction
 from perceptive import hash
-from database.hashdb import hashdb
+from database.additems import additems
 
+import sys
 import os
 import time
 import hashlib
 import json
+
+import argparse
+
 #import threading
 #import concurrent.futures
 
@@ -79,11 +83,11 @@ class generate:
        except OSError:
          pass
 
-   def dbcheck(self,videotype):
-       d = hashdb()
+   def addhashes(self,videotype):
+       d = additems()
        if videotype == 'reference':
           if d.referenceUnique(self.videosha):
-             d.referenceVideo(self.videosha,self.video,self.frameslocation,self.v.video_resolution,self.v.video_time,self.v.video_fps,self.v.video_length)
+             d.reference(self.videosha,self.video,self.frameslocation,self.v.video_resolution,self.v.video_time,self.v.video_fps,self.v.video_length)
              self.hashes(videotype)
           else:
              print("INFO]")
@@ -91,7 +95,7 @@ class generate:
              print(" - Nothing to do")
        elif videotype == 'candidate':
           if d.candidateUnique(self.videosha):
-             d.candidateVideo(self.videosha,self.video,self.frameslocation,self.v.video_resolution,self.v.video_time,self.v.video_fps,self.v.video_length)
+             d.candidate(self.videosha,self.video,self.frameslocation,self.v.video_resolution,self.v.video_time,self.v.video_fps,self.v.video_length)
              self.hashes(videotype)
           else:
              print("INFO]")
@@ -104,14 +108,11 @@ class generate:
        """ Generate a list with the frames files names """
        print("[INFO]")
        print(" - Generating hashes..\n")
-       d = hashdb()
+       d = additems()
        files = self.images()
        time.sleep(5)
        h = hash()
        for file in sorted(files):
-
-
-
 
            ahash = str(h.ahash(file))
            dhash = str(h.dhash(file))
@@ -119,27 +120,37 @@ class generate:
            whash = str(h.whash(file))
 
 
-
-           print ("%s %s %s %s %s %s") %(self.videosha,file, ahash, dhash, phash, whash)
-
            if videotype == 'reference':
               d.referenceHash(self.videosha, file, ahash, dhash, phash, whash)
-           elif videotype == 'candidate':
-              d.candidateHash(self.videosha, file, ahash, dhash, phash, whash)
+              print ("%s %s %s %s %s %s %s") %(videotype, self.videosha,file, ahash, dhash, phash, whash)
 
+
+           if videotype == 'candidate':
+              d.candidateHash(self.videosha, file, ahash, dhash, phash, whash)
+              print ("%s %s %s %s %s %s %s") %(videotype, self.videosha,file, ahash, dhash, phash, whash)
 
        d.dbclose()
-       # with open('database/hashes.json','w') as f:
-       #   json.dump(LINES,f)
-       #   f.close()
-
-   #def imagehash(self):
-       #with concurrent.futures.ProcessPoolExecutor(max_workers=4) as executor:
-       #    futures = [executor.submit(self.hashes, file) for file in sorted(files)]
 
 
+def main():
+   parser = argparse.ArgumentParser(description = 'Generate the hashes from a video file')
+   parser.add_argument("--movie", "-m",required = True, help="Specify the movie file")
+   parser.add_argument("--type", "-t", required = True, help="Specify the movie type (reference/candidate)") 
+
+   args = parser.parse_args()
+
+   if args.movie:
+     movie = args.movie
+     a = generate(movie)
+     a.framesextraction()
+
+   if args.type == "candidate" or args.type == "reference":
+     movietype = args.type
+     a.addhashes(movietype)
+
+   else:
+     print("Options for type are only (candidate/reference)")
 
 
-a = generate('movies/sample.mkv')
-a.framesextraction()
-a.dbcheck('reference')
+if __name__ == "__main__":
+   main()
