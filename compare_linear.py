@@ -73,42 +73,62 @@ class compare:
        f.close()
 
 a = compare('comparacao_1.csv')
-a.getHashes('movies/small.mkv','movies/small.mkv')
-
-b = compare('comparacao_7.csv')
-b.getHashes('movies/small.mkv','movies/beyond-white-space-trailer-1_h720p.mov')
+a.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/once-upon-a-deadpool-trailer-1_h720p.mov')
 
 c = compare('comparacao_2.csv')
-c.getHashes('movies/small.mkv','movies/sample.mkv')
+c.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/almost-almost-famous-trailer-1-ca_h720p.mov')
 
 d = compare('comparacao_3.csv')
-d.getHashes('movies/small.mkv','movies/bounty-killer-trailer-1_h720p.mov')
+d.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/aquaman-trailer-3_h720p.mov')
 
 e = compare('comparacao_4.csv')
-e.getHashes('movies/small.mkv','movies/once-upon-a-deadpool-trailer-1_h720p.mov')
+e.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/beyond-white-space-trailer-1_h720p.mov')
 
 f = compare('comparacao_5.csv')
-f.getHashes('movies/small.mkv','movies/page18-movie-4.mkv')
+f.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/bounty-killer-trailer-1_h720p.mov')
 
 g = compare('comparacao_6.csv')
-g.getHashes('movies/small.mkv','movies/secret-life-of-pets-2-trailer-2_h720p.mov')
+g.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/captainamericacivilwar-tlr2_h720p.mov')
+
+b = compare('comparacao_7.csv')
+b.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/creed_trailer_2_txtd_stereo_gc_h720p.mov')
 
 h = compare('comparacao_8.csv')
-h.getHashes('movies/small.mkv','movies/the-vanishing-trailer-1_h720p.mov')
+h.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/dead-in-a-week-trailer-1_h720p.mov')
 
 i = compare('comparacao_9.csv')
-i.getHashes('movies/small.mkv','movies/almost-almost-famous-trailer-1-ca_h720p.mov')
+i.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/dumbo-trailer-2_h720p.mov')
 
 j = compare('comparacao_10.csv')
-j.getHashes('movies/small.mkv','movies/dead-in-a-week-trailer-1_h720p.mov')
+j.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/early-man-trailer-2_h720p.mov')
 
 k = compare('comparacao_11.csv')
-k.getHashes('movies/small.mkv','movies/pokemon-detective-pikachu-trailer-1_h720p.mov')
+k.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/ferdinand-trailer-1_h720p.mov')
 
 l = compare('comparacao_12.csv')
-l.getHashes('movies/small.mkv','movies/dumbo-trailer-2_h720p.mov')
+l.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/insideout-usca-15sectease_h720p.mov')
 
 m = compare('comparacao_13.csv')
-m.getHashes('movies/small.mkv','movies/aquaman-trailer-3_h720p.mov')
+m.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/kungfupanda3-tlr2_h720p.mov')
 
+n = compare('comparacao_14.csv')
+n.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/mad_max_fury_road_trailer_2-720p.mov')
+
+o = compare('comparacao_15.csv')
+o.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/moana-trailer-2_h720p.mov')
+
+p = compare('comparacao_16.csv')
+p.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/pokemon-detective-pikachu-trailer-1_h720p.mov')
+
+q = compare('comparacao_17.csv')
+q.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/secretlifeofpets-tlr2_h720p.mov')
+
+r = compare('comparacao_18.csv')
+r.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/the-vanishing-trailer-1_h720p.mov')
+
+s = compare('comparacao_19.csv')
+s.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/wall-e-tlr2_h720p.mov')
+
+t = compare('comparacao_20.csv')
+t.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/wonder-woman-trailer-3_h720p.mov')
 
