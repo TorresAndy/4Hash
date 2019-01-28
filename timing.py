@@ -1,4 +1,13 @@
 #!/usr/bin/python
+#title                  :timing.py
+#description            :Used to calculate execution time
+#author                 :Anderson Torres
+#date                   :20181124
+#version                :1.0
+#usage                  :simply import the module in class
+#notes                  :
+#python_version :2.6.6
+#==============================================================================
 
 import atexit
 from time import clock

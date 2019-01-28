@@ -1,4 +1,13 @@
 #!/usr/bin/python
+#title                  :perceptive.py
+#description            :generate Perceptual Hashes
+#author                 :Anderson Torres
+#date                   :20181124
+#version                :1.0
+#usage                  :called within class -  image as parameter
+#notes                  :
+#python_version :2.6.6
+#==============================================================================
 
 from PIL import Image
 import imagehash

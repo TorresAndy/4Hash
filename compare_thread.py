@@ -37,14 +37,13 @@ class compare:
        print("%s| %s |%s | %s | Hamming between %s and %s: %s") %(loop,candidate,reference,type,chash,rhash,distance)
 
 
-    def getCandidate(self,filename):
+    def getHashes(self,candidateName,referenceName):
         a = finditems()
 
         try:
-          candidateID = a.findCandidateID(filename)
-          print(candidateID)
-          chashes = a.findCandidateHashes(candidateID)
-          rhashes = a.findReferenceHashes()
+
+          chashes = a.findCandidateHashes(candidateName)
+          rhashes = a.findReferenceHashes(referenceName)
           self.getSimilar(chashes,rhashes)
         except:
           print("Something wrong happened")
@@ -53,7 +52,6 @@ class compare:
     def getSimilar(self,chashes,rhashes):
        widgets = ['Processed: ', Counter(), ' lines (', Timer(), ')',Percentage(), Bar()]
        pbar = ProgressBar(widgets=widgets)
-       f = open("results.csv","w")
        csize = len(chashes)
        rsize = len(rhashes)
        iterations = csize * rsize
@@ -96,7 +94,7 @@ class compare:
                  # print("%s |%s | pHash | Hamming between %s and %s: %s") %(c_videoid,r_videoid,c_phash,r_phash,pdistance)
                  #if wdistance == 0:
                  # print("%s |%s | wHash | Hamming between %s and %s: %s") %(c_videoid,r_videoid,c_whash,r_whash,wdistance)
-       f.close()
 
-b = compare()
-b.getCandidate('movies/page18-movie-4.mkv')
+a = compare()
+a.getHashes('movies/once-upon-a-deadpool-trailer-1_h720p.mov','movies/once-upon-a-deadpool-trailer-1_h720p.mov')
+

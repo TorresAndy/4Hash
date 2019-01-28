@@ -1,5 +1,15 @@
 #!/usr/bin/python
-import time
+#title                  :frames.py
+#description            :Extract all frames from a video file
+#author                 :Anderson Torres
+#date                   :20181124
+#version                :1.0
+#usage                  :called within class
+#notes                  :
+#python_version :2.6.6
+#==============================================================================
+
+import timing
 import cv2
 import threading
 import imutils
@@ -31,8 +41,6 @@ class extraction:
 
 
    def extract(self):
-      # Log the time
-      time_start = time.time()
       count = 0
 
       # Start converting the video
@@ -50,12 +58,9 @@ class extraction:
         # If there are no more frames left
         video_length = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT)) - 1
         if (count > (video_length - 1)):
-            # Log the time again
-            time_end = time.time()
             # Release the feed
             self.cap.release()
             # Print status
             print ("[INFO]")
             print (" - Done extracting frames")
-            print (" - Finished frames extraction in %d seconds" % (time_end-time_start))
             break

@@ -1,8 +1,15 @@
 #!/usr/bin/python
+#title                  :generate.py
+#description            :Extract video frames and generates hashes using ImageHash functions:
+#                        Average Hash, Difference Hash, Perceptual Hash and Wavelet Hash
+#author                 :Anderson Torres
+#date                   :20181124
+#version                :1.0
+#usage                  :python generate --movie [file] --type [candidate|reference]
+#notes                  :
+#python_version :2.6.6
+#==============================================================================
 
-#    Extract video frames and generates hashes using ImageHash functions:
-#    Average Hash, Difference Hash, Perceptual Hash and Wavelet Hash
-#    (C) Anderson Torres, 2018
 
 from frames import extraction
 from perceptive import hash
@@ -13,6 +20,7 @@ import os
 import time
 import hashlib
 import json
+import timing
 
 import argparse
 

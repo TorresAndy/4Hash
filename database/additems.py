@@ -1,4 +1,14 @@
 #!/usr/bin/python
+#title                  :additems.py
+#description            :add values to database
+#author                 :Anderson Torres
+#date                   :20181124
+#version                :1.0
+#usage                  :called within class
+#notes                  :
+#python_version :2.6.6
+#==============================================================================
+
 import mysql.connector
 from dbconnect import dbconnect
 
