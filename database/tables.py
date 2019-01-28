@@ -4,8 +4,6 @@
 import mysql.connector
 
 
-conn = mysql.connector.connect(user='hashdb', password='And3rs0nT0rr3s',host='localhost', database='hashdb')
-cursor = conn.cursor()
 
 TABLES = {}
 
